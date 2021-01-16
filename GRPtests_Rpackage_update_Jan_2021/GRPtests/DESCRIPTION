@@ -1,8 +1,8 @@
 Package: GRPtests
 Type: Package
 Title: Goodness-of-Fit Tests in High-Dimensional GLMs
-Version: 0.1.0
-Date: 2019-09-14
+Version: 0.1.1
+Date: 2021-01-07
 Author: Jana Jankova [aut, cre], Rajen Shah [aut], Peter Buehlmann [aut], Richard Samworth [aut]
 Maintainer: Jana Jankova <jana.jankova@gmail.com>
 Description: Methodology for testing nonlinearity in the conditional mean function
@@ -11,7 +11,7 @@ Description: Methodology for testing nonlinearity in the conditional mean functi
     found in the paper by Jankova, Shah, Buehlmann and Samworth (2019)
     <arXiv:1908.03606>.
 License: GPL
-Imports: glmnet, MASS, stats, RPtests, ranger, randomForest
+Imports: glmnet, randomForest, MASS, stats, RPtests, ranger
 Suggests: xyz
 Encoding: UTF-8
 LazyData: true

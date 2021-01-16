@@ -38,11 +38,11 @@ single_split_pval <- function(X, y, fam, RP_function, penalize){
 
   # Compute residuals resA, resB
   resA <- partA$res/partA$D
-  resB <- partB$res/partB$D
+  resB <- partB$res/partA$D  
 
-  beta.hat <- partB$beta #### CHANGE
+  beta.hat <- partA$beta
   hatS <- which(beta.hat[-1] != 0)
-  
+
   # Compute D
   mix <- XB%*%beta.hat[-1] + beta.hat[1]  # predict fitA on XB
   pars <- GLM_parameters(mix, fam)
@@ -54,7 +54,7 @@ single_split_pval <- function(X, y, fam, RP_function, penalize){
     stop("Residuals from glmnet contain NaN. One binomial class might have too few observations.")
   }
 
-  pred.rf <- RP_function(XA, partA$res, XB)
+  pred.rf <- RP_function(XA, resA, XB)
 
   # Orthogonalize
   w <- orthogonalize(D, XB, pred.rf, hatS)
@@ -79,22 +79,19 @@ orthogonalize <- function(D, XB, pred.rf, hatS){
   n <- nrow(XB)
 
   # Define indices 'indi' where we orthognalize exactly
-  indi <- 1*rep(1,p)
+  indi <- rep(1,p)
   indi[hatS] <- 0
   if(sum(indi) == 0) indi[1] <- 1 # if all penalty factors are zero, put penalty on the first entry to avoid error
 
   # Orthogonalize
   fit <- glmnet(Dw*XB, Dw*pred.rf, penalty.factor = indi, nlambda = 40)
-  W <- Dw*pred.rf - Dw*XB%*%fit$beta
+  W <- Dw*(pred.rf - XB%*%fit$beta)
   lambda.sqrt.lasso <- sqrt(2*log(p)/n)
   index <- which.min(abs(fit$lambda - lambda.sqrt.lasso*apply(W, 2, function(x) sqrt(sum(x^2))/sqrt(n) )))
   beta.sqrt <- fit$beta[,index]
 
-  w <- Dw*pred.rf - Dw*XB%*%beta.sqrt
+  w <- Dw*(pred.rf - XB%*%beta.sqrt)
   w
-  
-  #max(abs(t(XB)%*%diag(Dw^2)%*%w))/sqrt(crossprod(w))
-  #sqrt(log(p))
 }
 
 
@@ -115,12 +112,8 @@ glmfit <- function(XA, yA, fam, penalize){
     fit1 <- cv.glmnet(x = XA, y = y.trans, family = fam)
     beta.hat <- coef(fit1, s = "lambda.min")
     mix <- XA %*% beta.hat[-1] + beta.hat[1]
-    
-    temp <- c(1:length(fit1$glmnet.fit$df))[fit1$glmnet.fit$df < 100]
-    
-    index.lam <- temp[length(temp)]
   }
-  
+
   pars <- GLM_parameters(mix, fam)
   mean_y <- pars$mean_y
   var_y <- pars$var_y
@@ -128,8 +121,7 @@ glmfit <- function(XA, yA, fam, penalize){
 
   resA <- yA - mean_y
 
-  list(D = as.vector(D), res = as.vector(resA), beta = as.vector(beta.hat), 
-       mu = as.vector(mean_y))
+  list(D = as.vector(D), res = as.vector(resA), beta = as.vector(beta.hat), mu = as.vector(mean_y))
 
 }
 

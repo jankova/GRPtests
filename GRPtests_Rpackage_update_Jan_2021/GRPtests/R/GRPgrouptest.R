@@ -25,7 +25,6 @@
 #' @references Janková, J., Shah, R. D., Bühlmann, P. and Samworth, R. (2019)
 #' \emph{Goodness-of-fit testing in high-dimensional generalized linear models}
 #' \url{https://arxiv.org/abs/1908.03606}
-#' @seealso
 #' @examples
 #' # Testing significance of a group of predictors in logistic regression
 #'

@@ -42,7 +42,6 @@
 #' Meinshausen, N., Meier, L. and Bühlmann, P. (2012)
 #' \emph{p-Values for High-Dimensional Regression}
 #' Journal of the American Statistical Association, 104:488, 1671-1681
-#' @seealso
 #' @examples
 #' # Testing for nonlinearity: Logistic link function
 #'
@@ -71,6 +70,7 @@
 #'
 #' @export
 #' @import stats
+#' @import randomForest
 #' @import glmnet
 #' @import RPtests
 #' @importFrom ranger ranger

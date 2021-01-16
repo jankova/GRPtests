@@ -32,7 +32,7 @@ gen.data <- function(n, p, fam, quad){
 }
 
 
-n = 800
+n = 900
 p = 900
 it10 <- 200
 fam <- "binomial"
@@ -89,7 +89,7 @@ p_rho2 <- apply(pv[2,,], 1, function(x) mean(x < 0.05))
 p_rho3 <- apply(pv[3,,], 1, function(x) mean(x < 0.05))
 
 library(xtable)
-titl <- c("\sigma = 0", "\sigma = 0.5", "\sigma = 1", "\sigma = 1.5")
+titl <- c("sigma = 0", "sigma = 0.5", "sigma = 1", "sigma = 1.5")
 xtable(rbind(titl, pvbench_rho1, pvbench_rho2, pvbench_rho3),
        align = NULL, digits = NULL,
        display = NULL, auto = FALSE)
@@ -99,6 +99,12 @@ xtable(rbind(titl, p_rho1, p_rho2, p_rho3),
        display = NULL, auto = FALSE)
 
 
-
+par(mfrow=c(length(rhos),length(sigs)))
+for(j in 1:length(rhos)){
+  for(k in 1:length(sigs)){
+    plot(ecdf(pv[j, k, ]),xlim=c(0,1),ylim=c(0,1))
+    abline(0,1)
+  }
+}
 
 ### END OF CODE. ###

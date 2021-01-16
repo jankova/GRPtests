@@ -5,12 +5,13 @@ library(MASS)
 library(glmnet)
 library(randomForest)
 library(MKmisc)
-library(GRPtests)
+library(ranger)
+#library(GRPtests)
 
 gen.data.f <- function(n, p, fam, ids, sig){
   s <- 3
   beta <- c(rep(1, min(p,s)), rep(0, p - min(p,s)))    # parameters
-  sigma0 <- cov.predictors("toeplitz", rho, p)
+  sigma0 <- toeplitz(rho^(0:(p-1)))
   
   X <- mvrnorm(n, rep(0,p), sigma0)*1
   f = sig * X[, ids[1]] * X[, ids[2]]
@@ -121,7 +122,7 @@ plot_power <- function(li, scen){
   
 }
 
-titl <- ifelse(H0 == TRUE, "H0 true,", "H1 true,")
+#titl <- ifelse(H0 == TRUE, "H0 true,", "H1 true,")
 cols <- c("red","black","blue","violet")
 nams <- c("RP-test",
           expression(paste("Hosmer-Lemeshow ",hat(C))),
