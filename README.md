@@ -10,4 +10,6 @@ The codes (implemented in R) are available in <br/><br/>
 
 # Method heuristics
 
-![alt text](https://github.com/jankova/GRPtests/blob/master/grpimage.pdf)
+![alt text](https://github.com/jankova/GRPtests/blob/master/grpimage.jpg)
+
+<img src="grpimage.jpg" alt="methodology_diagram" width="200"/>
