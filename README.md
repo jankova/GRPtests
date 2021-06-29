@@ -7,3 +7,6 @@ The codes (implemented in R) are available in <br/><br/>
 [Example_Section_4-2](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R),<br/>
 [Example_Section_4-3](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R),<br/>
 [Example_Section_4-4](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R).<br/>
+
+# Method heuristics
+
