@@ -10,3 +10,4 @@ The codes (implemented in R) are available in <br/><br/>
 
 # Method heuristics
 
+![alt text](https://github.com/jankova/GRPtests/blob/master/grpimage.pdf)
