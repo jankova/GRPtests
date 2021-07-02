@@ -8,7 +8,7 @@ The code (implemented in R) is available in <br/><br/>
 [Example_Section_4-3](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R),<br/>
 [Example_Section_4-4](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R).<br/>
 
-# Method heuristics
+## Method heuristics
 Let Y be the vector of labels and X the matrix with features as columns. 
 
 Split the data randomly into two parts (X_A, y_A) and (X_B, y_B). 
