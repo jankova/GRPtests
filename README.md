@@ -9,11 +9,11 @@ The code (implemented in R) is available in <br/><br/>
 [Example_Section_4-4](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R).<br/>
 
 ## Method heuristics
-Let Y be the vector of labels and X the matrix with features as columns. 
+Let Y be the target vector and X the matrix with features as columns. 
 
 Split the data randomly into two parts (X_A, y_A) and (X_B, y_B). 
 
-Fit a logistic regression of y_A on X_A and y_B on X_B and for both fitted regressions, compute the Pearson residuals
+Fit a GLM regression of y_A on X_A and y_B on X_B and for both fitted regressions, compute the Pearson residuals
 R_A and R_B.
 
 The main idea of the method is then as follows: if the logistic regression model was not a good fit, we would expect that some nonlinear signal was left in
