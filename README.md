@@ -25,5 +25,8 @@ If there was indeed nonlinear signal left in the residuals and the random forest
 then this signal should also be present in the residuals from part B. 
 Thus if we predict the random forest f_A() on X_B and compute the scalar product of f_A(X_B) and R_B, this would be large and we would reject the null hypothesis.
 
+A schematic illustration of the procedure is pictured below.
 
 <img src="grpimage.jpg" alt="methodology_diagram" width="300"/>
+
+
