@@ -29,7 +29,7 @@ A schematic illustration of the procedure is pictured below.
 
 <img src="grpimage.jpg" alt="methodology_diagram" width="300"/>
 
-## Installation
+## Installation of R package GRPtests
 
 Installation in R from this github repository:
 
