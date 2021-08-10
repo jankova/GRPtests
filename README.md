@@ -44,7 +44,7 @@ install_github("jankova/GGMinference_R_package/GGMinference")
 Installation from CRAN:
 
 ```
-install.package("GRPtests")
+install.packages("GRPtests")
 
 library("GRPtests")
 ```
