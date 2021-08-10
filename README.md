@@ -31,7 +31,7 @@ A schematic illustration of the procedure is pictured below.
 
 ## Installation
 
-Installation from github:
+Installation in R from this github repository:
 
 ```
 install.packages(devtools)
@@ -41,7 +41,7 @@ library(devtools)
 install_github("jankova/GGMinference_R_package/GGMinference")
 ```
 
-Installation from CRAN:
+Installation in R from CRAN repository:
 
 ```
 install.packages("GRPtests")
