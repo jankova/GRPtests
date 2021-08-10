@@ -29,4 +29,22 @@ A schematic illustration of the procedure is pictured below.
 
 <img src="grpimage.jpg" alt="methodology_diagram" width="300"/>
 
+## Installation
 
+Installation from github:
+
+```
+install.packages(devtools)
+
+library(devtools)
+
+install_github("jankova/GGMinference_R_package/GGMinference")
+```
+
+Installation from CRAN:
+
+```
+install.package("GRPtests")
+
+library("GRPtests")
+```
