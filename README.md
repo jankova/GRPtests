@@ -38,7 +38,7 @@ install.packages(devtools)
 
 library(devtools)
 
-install_github("jankova/GGMinference_R_package/GGMinference")
+install_github("jankova/GRPtests/GRPtests_Rpackage_update_Jan_2021/GRPtests")
 ```
 
 Installation in R from CRAN repository:
