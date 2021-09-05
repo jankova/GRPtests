@@ -1,15 +1,21 @@
-# GRPtests
-
-Methodology for goodness-of-fit testing in high-dimensional generalized linear models introduced in 
+# GRPtests: Goodness-of-fit testing for high-dimensional generalized linear models
 
 ## Contents of this repository
 
-This repository contains the package GRPtests source code in [GRPtests_Rpackage_update_Jan_2021](https://github.com/jankova/GRPtests/tree/master/GRPtests_Rpackage_update_Jan_2021) folder. 
-The package can also be installed from CRAN (see the section below).
+This repository contains the R package GRPtests in the [GRPtests_Rpackage_update_Jan_2021](https://github.com/jankova/GRPtests/tree/master/GRPtests_Rpackage_update_Jan_2021) folder. 
+The package can also be installed from CRAN (see the Installation section below).
 
-This repository further contains code reproducing empirical results from Section 4 of [1].
+This repository further contains code reproducing empirical results from Section 4 of [[1]](https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12371).
 
 ## Installation of R package GRPtests
+
+Installation in R from CRAN repository:
+
+```
+install.packages("GRPtests")
+
+library("GRPtests")
+```
 
 Installation in R from this github repository:
 
@@ -21,18 +27,10 @@ library(devtools)
 install_github("jankova/GRPtests/GRPtests_Rpackage_update_Jan_2021/GRPtests")
 ```
 
-Installation in R from CRAN repository:
-
-```
-install.packages("GRPtests")
-
-library("GRPtests")
-```
 
 ## Examples from empirical section of [1]
 
-The code in this repository reproduces empirical results from Section 4 of [Janková, J., Shah, R. D., Bühlmann, P. and Samworth, R. J., Goodness-of-fit testing in high-dimensional generalized linear models (2020), ArXiv: 1908.03606](https://arxiv.org/abs/1908.03606).<br/><br/>
-The code (implemented in R) is available in <br/><br/>
+The code reproducing empirical results from Section 4 of [1] is available in <br/><br/>
 [Example_Section_4-1](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R),<br/>
 [Example_Section_4-2](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R),<br/>
 [Example_Section_4-3](https://github.com/jankova/GRPtests/blob/master/Example_Section_4-1.R),<br/>
@@ -50,7 +48,7 @@ R_A and R_B.
 
 The main idea of the method is then as follows: if the logistic regression model was not a good fit, we would expect that some nonlinear signal was left in
 the residuals.
-Therefore we use a ML method (by default the random forest, but any method may be used) to predict the leftover signal from R_A.
+Therefore we use a ML method (by default the random forest, but any method may be used) to predict the leftover signal from residuals R_A.
 
 Using the random forest to fit R_A on X_A, we obtain a prediction function f_A(). 
 If there was indeed nonlinear signal left in the residuals and the random forest picked it up,
