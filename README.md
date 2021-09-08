@@ -2,10 +2,12 @@
 
 ## Contents of this repository
 
-This repository contains the R package GRPtests in the [GRPtests_Rpackage_update_Jan_2021](https://github.com/jankova/GRPtests/tree/master/GRPtests_Rpackage_update_Jan_2021) folder. 
+This repository contains:
+
+1. R package GRPtests in the [GRPtests_Rpackage_update_Jan_2021](https://github.com/jankova/GRPtests/tree/master/GRPtests_Rpackage_update_Jan_2021) folder. 
 The package can also be installed from CRAN (see the Installation section below).
 
-This repository further contains code reproducing empirical results from Section 4 of [[1]](https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12371).
+2. Code reproducing empirical results from Section 4 of [[1]](https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12371).
 
 ## Installation of R package GRPtests
 
